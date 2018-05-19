@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ic_calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_date" />
+
+    <TextView
+        android:id="@+id/text_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ic_calendar"
+        tools:text="Lorem ipsum dolor sit amet, consecteesque accumsanus diam lectus at ex. Sed porttitor gravida est, in aliquam tellus venenatis ac. Mauris suscipit fermentum porttitor. Donec consectetur tellus eget urna finibus, quis sodales augue condimentum. Quisque neque enim, pretium faucibus rhoncus a, tincidunt quis odio. Nam gravida felis nibh, quis blandit orci fringilla quis. Etiam euismod pretium dignissim. Maecenas velit sem, aliquet eget finibus ac, aliquam a leo." />
+
+    <TextView
+        android:id="@+id/text_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ic_calendar"
+        app:layout_constraintStart_toEndOf="@+id/ic_calendar"
+        app:layout_constraintTop_toTopOf="@+id/ic_calendar"
+        tools:text="15/04/2018 - 19/04/2018" />
+
+    <TextView
+        android:id="@+id/text_adress"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_adress"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        tools:text="Sociedade Ginástica Novo Hamburgo - R. Castro Alves, 166 - Rio Branco, Novo Hamburgo - RS, 93310-270" />
+
+    <ImageButton
+        android:id="@+id/btn_adress"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_adress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/text_adress"
+        app:layout_constraintTop_toTopOf="@+id/text_adress"
+        app:srcCompat="@drawable/ic_location" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_location"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"
+        android:visibility="gone"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_location" />
+
+
+</android.support.constraint.ConstraintLayout>

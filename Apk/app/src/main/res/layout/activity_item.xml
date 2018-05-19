@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/chave_basquete_f" android:id="@+id/chave_basquete_f" android:visibility="gone"/>
+    <include layout="@layout/chave_basquete_m" android:id="@+id/chave_basquete_m" android:visibility="gone"/>
+    <include layout="@layout/chave_futsal_f" android:id="@+id/chave_futsal_f" android:visibility="gone"/>
+    <include layout="@layout/chave_futsal_m" android:id="@+id/chave_futsal_m" android:visibility="gone"/>
+    <include layout="@layout/chave_handebol_f" android:id="@+id/chave_handebol_f" android:visibility="gone"/>
+    <include layout="@layout/chave_handebol_m" android:id="@+id/chave_handebol_m" android:visibility="gone"/>
+    <include layout="@layout/chave_volei_f" android:id="@+id/chave_volei_f" android:visibility="gone"/>
+    <include layout="@layout/chave_volei_m" android:id="@+id/chave_volei_m" android:visibility="gone"/>
+
+    <include layout="@layout/chave_praia_f" android:id="@+id/chave_praia_f" android:visibility="gone"/>
+    <include layout="@layout/chave_praia_m" android:id="@+id/chave_praia_m" android:visibility="gone"/>
+    <include layout="@layout/chave_tenis_f" android:id="@+id/chave_tenis_f" android:visibility="gone"/>
+    <include layout="@layout/chave_tenis_m" android:id="@+id/chave_tenis_m" android:visibility="gone"/>
+
+
+</RelativeLayout>

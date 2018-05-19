@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GAppE</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="base_url">https://onesignal.com/api/v1/</string>
+
+    <string name="header_authorization">Basic OGE0ZTg2ZDUtMzM2My00OWI2LWJjNTMtNTIzZTQ2NmIyMDA0</string>
+    <string name="header_content_type">application/json</string>
+
+    <string name="body_app_id">d74d5747-1648-4918-b00b-2a108cc9a7fc</string>
+    <string name="body_contents">veio monstro"</string>
+    <string name="body_included_segments">All</string>
+    <string name="body_send_after">2018-05-13 21:31:00 GMT-0300</string>
+
+</resources>

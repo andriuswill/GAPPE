@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "542986420428",
+    "firebase_url": "https://tcc-ifrs.firebaseio.com",
+    "project_id": "tcc-ifrs",
+    "storage_bucket": "tcc-ifrs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542986420428:android:e4f0de68fc8e19e0",
+        "android_client_info": {
+          "package_name": "com.tcc.andrius.tccapk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542986420428-j40nsbks763vepbhutdo04tnecghba87.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tcc.andrius.tccapk",
+            "certificate_hash": "0b8ddb7c2c413f3c1f7f46c17d0f5666764e10ce"
+          }
+        },
+        {
+          "client_id": "542986420428-bmoko0kph17j60btpm7dm93esagt4ljl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8hnSGUXT_rPDxoXp55rsPLXRCC-LyNk8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "542986420428-bmoko0kph17j60btpm7dm93esagt4ljl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
