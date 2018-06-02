@@ -1,6 +1,8 @@
 package com.tcc.andrius.tccapk.adapters
 
+import android.app.Activity
 import android.content.Context
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,7 +11,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.tcc.andrius.tccapk.R
 import com.tcc.andrius.tccapk.models.Item
-import com.tcc.andrius.tccapk.ui.event.EventActivity
 import com.tcc.andrius.tccapk.ui.event.openEvent.ItemActivity
 import com.tcc.andrius.tccapk.utils.CustomDateUtils
 import com.tcc.andrius.tccapk.utils.SharedPreferencesUtils
@@ -21,16 +22,15 @@ import org.jetbrains.anko.toast
 /**
  * Created by Andrius on 15/04/2018.
  */
-class ItensScheduleAdapter(val context : Context) : RecyclerView.Adapter<ItensScheduleAdapter.ItensViewHolder>() {
+class ItensScheduleAdapter(val context : Context, val mList :ArrayList<Item>) : RecyclerView.Adapter<ItensScheduleAdapter.ItensViewHolder>() {
 
-    var mList = arrayListOf<Item>()
+    /*var mList = arrayListOf<Item>()
 
     fun updateList(listItens : ArrayList<Item>){
-
         listItens.sortBy { it.date }
         mList = listItens
         notifyDataSetChanged()
-    }
+    }*/
 
     override fun onBindViewHolder(holder: ItensViewHolder?, position: Int) {
         holder?.bindItens(mList[position], context)
@@ -45,6 +45,7 @@ class ItensScheduleAdapter(val context : Context) : RecyclerView.Adapter<ItensSc
 
     class ItensViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
         fun bindItens(item : Item, context: Context) {
+
             var textDate = CustomDateUtils.getFormatedDate(item.date, "ddMMyyyyHHmm")
             itemView.text_name.text = item.name
             itemView.text_local.text = "Local: " + item.speaker
@@ -65,6 +66,7 @@ class ItensScheduleAdapter(val context : Context) : RecyclerView.Adapter<ItensSc
             itemView.card_item.setOnClickListener {
                 context.startActivity<ItemActivity>("item" to item)
             }
+
         }
     }
 }

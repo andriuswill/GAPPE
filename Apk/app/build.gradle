@@ -72,6 +72,9 @@ dependencies {
     implementation('com.github.lowlevel-studios:storo:1.2.0') {
         transitive = true
     }
+    compile 'com.github.faruktoptas:FancyShowCaseView:1.0.0'
+    compile 'com.github.deano2390:MaterialShowcaseView:1.2.0'
+
 
     //Firebase
     compile 'com.google.firebase:firebase-core:12.0.1'

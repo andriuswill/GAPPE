@@ -5,10 +5,13 @@
     <color name="colorAccent">#FF4081</color>-->
 
     <color name="colorPrimary">#499B50</color>
-    <color name="colorPrimaryDark">	#3A7A2C</color>//
+    <color name="colorPrimaryDark">	#3A7A2C</color>
     <color name="colorAccent">#CF1C1F</color>
 
     <color name="colorLightGreen">#FAFDFA</color>
 
     <color name="white">#FFFFFF</color>
+
+    <color name="showcaseBody">	#CC3A7A2C</color>
+
 </resources>

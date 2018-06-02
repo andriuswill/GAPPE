@@ -13,6 +13,5 @@ interface MainContract {
 
     interface Presenter {
         fun getEvents()
-        fun createNotification(time: String)
     }
 }

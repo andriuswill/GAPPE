@@ -16,11 +16,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tcc.andrius.tccapk.R
+import com.tcc.andrius.tccapk.R.id.*
 import com.tcc.andrius.tccapk.models.Event
 import com.tcc.andrius.tccapk.ui.googlemaps.MapsActivity
 import com.tcc.andrius.tccapk.utils.CustomDateUtils
+import kotlinx.android.synthetic.main.activity_event.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import org.jetbrains.anko.startActivity
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseView
+import uk.co.deanwild.materialshowcaseview.ShowcaseConfig
 
 /**
  * Created by Andrius on 08/04/2018.
@@ -47,13 +52,24 @@ class HomeFragment : Fragment() {
             }
         }
 
+
+        val sequence = MaterialShowcaseSequence(activity)
+        val config = ShowcaseConfig()
+        config.delay = 300
+        config.maskColor = ContextCompat.getColor(context, R.color.showcaseBody)
+        sequence.setConfig(config)
+        sequence.addSequenceItem(activity.navigation.findViewById(navigation_home),"Nesta área é possível acessar as principais informações do evento.", "PRÓXIMO")
+        sequence.addSequenceItem(activity.navigation.findViewById(navigation_schedule),"Nesta área é possível acessar a programação do evento.", "PRÓXIMO")
+        sequence.addSequenceItem(activity.navigation.findViewById(navigation_agenda),"Nesta área é possível acessar suas atividades favoritadas.", "PRÓXIMO")
+        sequence.addSequenceItem(activity.navigation.findViewById(navigation_map),"Nesta área é possível acessar o mapa do evento.", "PRÓXIMO")
+        sequence.addSequenceItem(view.btn_adress,"Com este botão é possível traçar uma rota até o evento.", "OK")
+        //sequence.start()
+
         return  view
     }
 
     @SuppressLint("MissingPermission")
     fun showLocation(lat: Double?, lng: Double?){
-        //val lat = -23.545265
-        //val lng = -46.474254
 
         val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
 

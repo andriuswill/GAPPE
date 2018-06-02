@@ -6,11 +6,29 @@
     android:layout_height="match_parent"
     tools:context="com.tcc.andrius.tccapk.ui.main.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:contentInsetStart="55dp"
+        android:contentInsetLeft="55dp"
+        android:contentInsetEnd="55dp"
+        android:contentInsetRight="55dp"
+        app:contentInsetLeft="55dp"
+        app:contentInsetStart="55dp"
+        app:contentInsetRight="55dp"
+        app:contentInsetEnd="55dp"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_events"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorLightGreen"/>
+        android:background="@color/colorLightGreen"
+        android:layout_below="@id/toolbar"/>
 
     <ProgressBar
         android:id="@+id/progressbar"

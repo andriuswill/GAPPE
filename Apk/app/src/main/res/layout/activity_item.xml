@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:contentInsetStart="55dp"
+        android:contentInsetLeft="55dp"
+        android:contentInsetEnd="55dp"
+        android:contentInsetRight="55dp"
+        app:contentInsetLeft="55dp"
+        app:contentInsetStart="55dp"
+        app:contentInsetRight="55dp"
+        app:contentInsetEnd="55dp"
+        tools:targetApi="lollipop"/>
 
     <include layout="@layout/chave_basquete_f" android:id="@+id/chave_basquete_f" android:visibility="gone"/>
     <include layout="@layout/chave_basquete_m" android:id="@+id/chave_basquete_m" android:visibility="gone"/>
@@ -18,4 +39,4 @@
     <include layout="@layout/chave_tenis_m" android:id="@+id/chave_tenis_m" android:visibility="gone"/>
 
 
-</RelativeLayout>
+</LinearLayout>

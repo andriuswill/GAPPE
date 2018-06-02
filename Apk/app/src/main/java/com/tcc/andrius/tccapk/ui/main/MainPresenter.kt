@@ -55,29 +55,4 @@ class MainPresenter(private val mContext: Context, val mView: MainContract.View)
 
     }
 
-    override fun createNotification(time: String){
-        val retrofit = Retrofit.Builder()
-                .baseUrl("https://onesignal.com/api/v1/")
-                .addConverterFactory(MoshiConverterFactory.create())
-                .build()
-
-        var included_segments = ArrayList<String>()
-        included_segments.add("All")
-        var notification = Notification("d74d5747-1648-4918-b00b-2a108cc9a7fc", Content("Notificação teste"), included_segments,  time , Data("teste"))
-
-        val service = retrofit.create(OnesignalService::class.java)
-        val serviceCall = service.createNotification(notification)
-
-        serviceCall.enqueue(object : Callback<NotificationResponse>{
-            override fun onResponse(call: Call<NotificationResponse>?, response: Response<NotificationResponse>?) {
-               Log.d("ninja","onResponse")
-            }
-
-            override fun onFailure(call: Call<NotificationResponse>?, t: Throwable?) {
-                Log.d("ninja","onFailure")
-            }
-        })
-
-    }
-
 }
