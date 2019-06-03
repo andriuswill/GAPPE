@@ -2,7 +2,6 @@ package com.tcc.andrius.tccapk.adapters
 
 import android.view.View
 import android.content.Context
-import android.opengl.Visibility
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -41,11 +40,11 @@ class ItensAgendaAdapter(val context : Context) : RecyclerView.Adapter<ItensAgen
 
     class ItensViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
         fun bindItens(item : Item, context: Context) {
-            var textDate = CustomDateUtils.getFormatedDate(item.date, "ddMMyyyyHHmm")
+            var textDate = CustomDateUtils.getFormatedDate(item.takeDate(), "ddMMyyyyHHmm")
             itemView.text_name.text = item.name
             itemView.text_type.visibility = View.VISIBLE
             itemView.text_type.text = item.type
-            itemView.text_time.text = CustomDateUtils.getFormatedDate(item.date, "HH:mm")
+            itemView.text_time.text = item.time
             itemView.text_local.text = "Local: " + item.speaker
             itemView.toggleButton.isChecked = SharedPreferencesUtils.hasItem(item.name + textDate, context)
             itemView.toggleButton.setOnClickListener {
@@ -60,9 +59,9 @@ class ItensAgendaAdapter(val context : Context) : RecyclerView.Adapter<ItensAgen
                 }
             }
 
-            itemView.card_item.setOnClickListener {
+            /*itemView.card_item.setOnClickListener {
                 context.startActivity<ItemActivity>("item" to item)
-            }
+            }*/
         }
     }
 }

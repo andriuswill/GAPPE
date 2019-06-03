@@ -30,34 +30,16 @@ class ScheduleViewpage : Fragment() {
         val itens = arguments.getSerializable("itens") as ArrayList<Item>
 
         if (itens.isNotEmpty()) {
-            var adapter = ItensScheduleAdapter(context, itens)
+            val sortedItens = ArrayList<Item>(itens.sortedWith(compareBy({ it.time }, { it.name })))
+            var adapter = ItensScheduleAdapter(context,sortedItens)
             view.recyclerview_itens.setHasFixedSize(true)
             view.recyclerview_itens.layoutManager = LinearLayoutManager(context)
             view.recyclerview_itens.adapter = adapter
 
 
-            val test = view.recyclerview_itens.findViewHolderForAdapterPosition(0)
-            Log.d("ninja", test.toString())
-
         } else {
             view.text_error.visibility = View.VISIBLE
         }
-
-
-
-        val fancyShowCaseView = FancyShowCaseView.Builder(activity)
-                .title("Third Queue Item")
-                .customView(R.layout.showcase_screen) { view ->
-                    kotlin.run {
-                        view.text_description.text = "Favorite atividades par receber notificações quando iniciarem.\nAtividades faviritadas estarão disponíveis na agenda"
-                        view.btn_close.setOnClickListener(mClickListener)
-                    }
-                }
-                .closeOnTouch(false)
-                .build()
-
-        fancyShowCaseQueue = FancyShowCaseQueue().add(fancyShowCaseView)
-        fancyShowCaseQueue!!.show()
 
         return view
     }

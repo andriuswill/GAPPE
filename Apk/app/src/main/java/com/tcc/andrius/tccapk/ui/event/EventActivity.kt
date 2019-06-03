@@ -41,20 +41,6 @@ class EventActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         supportFragmentManager.beginTransaction().replace(R.id.main_container, HomeFragment.newInstance(event)).commit()
 
-        val fancyShowCaseView1 = FancyShowCaseView.Builder(this)
-                .title("Third Queue Item")
-
-                .customView(R.layout.showcase_screen) { view ->
-                    kotlin.run {
-                        view.text_description.text = "Favorite atividades par receber notificações sobre elas."
-                        view.btn_close.setOnClickListener(mClickListener)
-                    }
-                }
-                .closeOnTouch(false)
-                .build()
-
-        fancyShowCaseQueue = FancyShowCaseQueue().add(fancyShowCaseView1)
-        fancyShowCaseQueue!!.show()
 
     }
 

@@ -20,8 +20,6 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 class MainPresenter(private val mContext: Context, val mView: MainContract.View) : MainContract.Presenter {
 
     override fun getEvents() {
-        /*val type = object : TypeToken<ArrayList<Event>>() {}.type
-        val events = Storo.get<ArrayList<Event>>("events", type).execute()*/
 
         var events = ArrayList<Event>()
 
@@ -35,7 +33,8 @@ class MainPresenter(private val mContext: Context, val mView: MainContract.View)
                     for (postSnapshot in dataSnapshot.children) {
                         val event = postSnapshot.getValue<Event>(Event::class.java)
                         if (event != null) {
-                            events.add(event)
+                            if (event.published == true)
+                                events.add(event)
                         }
                     }
                     if(events.isNotEmpty())

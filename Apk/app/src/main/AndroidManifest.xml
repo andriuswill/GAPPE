@@ -26,8 +26,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.event.EventActivity" />
-        <activity android:name=".ui.event.openEvent.ScheduleActivity" />
-        <activity android:name=".ui.event.openEvent.ItemActivity" />
+        <activity android:name=".ui.event.event.ScheduleActivity" />
+        <activity android:name=".ui.event.event.ItemActivity" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

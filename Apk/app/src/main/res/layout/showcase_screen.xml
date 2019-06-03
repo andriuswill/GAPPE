@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Texto Texto Texto Texto Texto Texto T" />
+        android:text="Use o ícone de favorito para adicionar atividades à sua agenda, assim podendo acompanhá-las e receber notificações." />
 
     <Button
         android:id="@+id/btn_close"

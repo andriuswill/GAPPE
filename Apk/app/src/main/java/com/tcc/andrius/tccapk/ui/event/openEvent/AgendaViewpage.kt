@@ -22,15 +22,16 @@ class AgendaViewpage : Fragment() {
         val view = inflater!!.inflate(R.layout.viewpage_schedule, container, false)
 
         var itens = arguments.getSerializable("itens") as ArrayList<Item>
-        itens = itens.filter { s: Item -> SharedPreferencesUtils.hasItem(s.name + CustomDateUtils.getFormatedDate(s.date, "ddMMyyyyHHmm"), context) } as ArrayList
+        itens = itens.filter { s: Item -> SharedPreferencesUtils.hasItem(s.name + CustomDateUtils.getFormatedDate(s.takeDate(), "ddMMyyyyHHmm"), context) } as ArrayList
 
 
         if (itens.isNotEmpty()) {
+            val sortedItens = ArrayList<Item>(itens.sortedWith(compareBy({ it.time }, { it.name })))
             var adapter = ItensAgendaAdapter(context)
             view.recyclerview_itens.setHasFixedSize(true)
             view.recyclerview_itens.layoutManager = LinearLayoutManager(context)
             view.recyclerview_itens.adapter = adapter
-            adapter.updateList(itens)
+            adapter.updateList(sortedItens)
         } else{
             view.text_error.visibility = View.VISIBLE
         }

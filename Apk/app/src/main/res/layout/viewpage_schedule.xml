@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Nenhum agendamento para este dia."
+        android:text="Nenhuma atividade encontrada."
         android:visibility="gone"/>
 
 </RelativeLayout>

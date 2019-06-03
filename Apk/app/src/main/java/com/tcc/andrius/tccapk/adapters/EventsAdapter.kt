@@ -40,8 +40,8 @@ class EventsAdapter(val context : Context) : RecyclerView.Adapter<EventsAdapter.
 
     class EventsViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
         fun bindEvents(event : Event, context: Context, position: Int) {
-            val url =  "https://firebasestorage.googleapis.com/v0/b/tcc-ifrs.appspot.com/o/logo.jpg?alt=media&token=74ed1d6f-416f-42e3-b7d2-4d9886934391"
-            Picasso.get().load(url).fit()
+           // val url =  "https://firebasestorage.googleapis.com/v0/b/tcc-ifrs.appspot.com/o/logo.jpg?alt=media&token=74ed1d6f-416f-42e3-b7d2-4d9886934391"
+            Picasso.get().load(event.logo).fit()
                     .error(R.drawable.default_image)
                     .into(itemView.img_logo, object : Callback {
                         override fun onSuccess() {

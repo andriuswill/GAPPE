@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         mAdapter = EventsAdapter(this)
         toolbar.setTitleTextColor(resources.getColor(R.color.white))
 
-
         mRecyclerviewEvents.setHasFixedSize(true)
         mRecyclerviewEvents.layoutManager = LinearLayoutManager(this)
         mRecyclerviewEvents.adapter = mAdapter

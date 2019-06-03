@@ -10,13 +10,21 @@ import com.tcc.andrius.tccapk.adapters.ScheduleAdapter
 import com.tcc.andrius.tccapk.models.Event
 import com.tcc.andrius.tccapk.models.Item
 import kotlinx.android.synthetic.main.activity_schedule.*
-import uk.co.deanwild.materialshowcaseview.MaterialShowcaseView
+import android.support.annotation.NonNull
+import android.view.View
+import android.widget.Button
+import me.toptas.fancyshowcase.OnViewInflateListener
+import me.toptas.fancyshowcase.FancyShowCaseView
+
+
 
 
 /**
  * Created by Andrius on 08/04/2018.
  */
 class ScheduleActivity : AppCompatActivity()  {
+
+    lateinit var fancyShowCaseView: FancyShowCaseView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,19 +40,24 @@ class ScheduleActivity : AppCompatActivity()  {
 
 
         val itens = ArrayList<Item>()
-        for (item: Item in event.itens!!) {
+        for (item: Item in event.takeItens()!!) {
             if(item.type.equals(type))
                 itens.add(item)
         }
 
-        event.itens = itens
-
-        val mPagerAdapter = ScheduleAdapter(supportFragmentManager, event)
+        val mPagerAdapter = ScheduleAdapter(supportFragmentManager, event, itens)
         viewpager_schedule.adapter = mPagerAdapter
         tab_schedule.setupWithViewPager(viewpager_schedule)
 
+        fancyShowCaseView = FancyShowCaseView.Builder(this)
+                .customView(R.layout.showcase_screen) {
+                    it.findViewById<Button>(R.id.btn_close).setOnClickListener(mClickListener)
+                }
+                .closeOnTouch(false)
+                .showOnce("0003")
+                .build()
 
-
+        fancyShowCaseView.show()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -57,5 +70,8 @@ class ScheduleActivity : AppCompatActivity()  {
         return super.onOptionsItemSelected(item)
     }
 
+    var mClickListener: View.OnClickListener = View.OnClickListener {
+        fancyShowCaseView.hide()
+    }
 
 }
